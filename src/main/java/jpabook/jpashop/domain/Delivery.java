@@ -10,7 +10,7 @@ import lombok.Setter;
 public class Delivery {
     @Id @GeneratedValue
     @Column(name="delivery_id")
-    private String id;
+    private Long id;
 
     @OneToOne(mappedBy = "delivery",fetch=FetchType.LAZY)
     private Order order;
@@ -19,5 +19,5 @@ public class Delivery {
     private Address address;
 
     @Enumerated(EnumType.STRING)
-    private DeliveryStatus deliveryStatus;
+    private DeliveryStatus status;
 }
